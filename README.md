@@ -1,6 +1,8 @@
 # epicflow-testing
 
-Ubuntu 16.04
+Thansk to https://thoth.inrialpes.fr/src/epicflow/ Epic Flow algorithm can be tested. I downloaded but took a while to successfully compile.
+
+System: Ubuntu 16.04
 
 ### Problem of libpng
 
@@ -11,3 +13,8 @@ So, I downloaded `libpng-1.6.32.tar.gz`, installed to a local folder.
 ### Problem of -llapack
 
 `-llapack` is changed to `-llapack_atlas` in Makefile
+
+### To do
+- OpenCV interface
+- GPU CUDA
+- Mac OS X
