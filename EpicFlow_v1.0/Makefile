@@ -2,10 +2,10 @@ CCPP=g++ -std=c++11
 CC=gcc
 
 LAPACKCFLAGS=#-DTHREADEDLAPACK
-LAPACKLDFLAGS=-L/usr/lib64/atlas/ -llapack
+LAPACKLDFLAGS=-llapack_atlas #-L/usr/lib64/atlas/ -llapack
 
-CFLAGS=-DFINTEGER=int -fPIC -Wall -g -O3 -msse4 $(LAPACKCFLAGS) # -fopenmp -DUSE_OPENMP
-LDFLAGS=-fPIC -Wall -g -O3 -msse4 -ljpeg -lpng $(LAPACKLDFLAGS)  #-fopenmp 
+CFLAGS= -I ../libpng/include -DFINTEGER=int -fPIC -Wall -g -O3 -msse4 $(LAPACKCFLAGS) # -fopenmp -DUSE_OPENMP
+LDFLAGS=-fPIC -Wall -g -O3 -msse4 -ljpeg -L ../libpng/lib -lpng $(LAPACKLDFLAGS)  #-fopenmp 
 
 SOURCES_CPP := $(shell find . -name '*.cpp')
 SOURCES_C := $(shell find . -name '*.c')
